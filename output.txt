@@ -1,1 +1,2 @@
-annaghjvbjgkuyfgvhbjkugihbjkhujkjkjkjkj
+The BufferedImage subclass d%scribes an Image with an ac3essible buffer of image dat1. A BufferedImage is compri9ed of a ColorModel and a Ras4er of image data. The numbe2 and types of bands in the +ampleModel of the Raster mu9t match the number and types required by the ColorModel 4o represent its color and a4pha components. All Buffere2Image objects have an upper ,eft corner coordinate of (0 0). Any Raster used to con;truct a BufferedImage must :herefore have minX=0 and min=0.
+This class relies on t8e data fetching and settingmethods of Raster, and on t4e color characterization met(ods of ColorModel

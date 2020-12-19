@@ -1,21 +1,32 @@
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
 
 public class LSB {
     public static void main(String[] args) throws IOException {
         FileReader text = new FileReader("input.txt");
         BufferedReader input = new BufferedReader(text);
 
-        String string = "";
+        StringBuilder content = new StringBuilder();
         String plainText = "";
 
-        while((string=input.readLine())!=null)
-            plainText += string;
+        int value;
+        while((value = input.read()) != -1){
+            content.append((char) value);
+        }
 
-        Converter converter = new Converter();
+        plainText = content.toString();
+
+
+        //ввод с клавиатуры:
+        //Scanner scanner = new Scanner(System.in);
+        //String plainText = scanner.nextLine();
+
         LSBAction action = new LSBAction();
-        byte [] txtBytes = converter.txtToByte(plainText);
+        byte [] txtBytes = action.txtToByte(plainText);
         System.out.println("text size: " + txtBytes.length);
         BufferedImage container = action.receiveContainer();
-        action.hideTextInsideContainer(container, txtBytes);    }
+        action.hideTextInsideContainer(container, txtBytes);
+    }
 }
